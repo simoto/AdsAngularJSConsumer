@@ -9,11 +9,11 @@
     <title>Ads</title>
 </head>
 <body>
-<header id="app-header">
+<header id="app-header" class="page-header">
     <div ng-include="'templates/partial/header.html'"></div>
 </header>
-<div id='app-content'>
-    <div class='col-md-2 sidebar'>
+<div id='app-content' class="container">
+    <div class='col-md-2 sidebar nav'>
         <div ng-include="'templates/partial/left-sidebar.html'"></div>
     </div>
     <div class='col-md-8' ng-view>
@@ -22,8 +22,8 @@
         <div ng-include="'templates/partial/right-sidebar.html'"></div>
     </div>
 </div>
-<footer id="app-footer">
-    &copy; 2014 by Software University Foundation, No Rights Reserved
+<footer id="app-footer" class="modal-footer">
+    <p class="text-center">&copy; 2014 by Software University Foundation, No Rights Reserved</p>
 </footer>
 <!-- Load app libraries -->
 <script src="bower_components/angular/angular.js"></script>
