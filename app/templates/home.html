@@ -1,8 +1,8 @@
 <div class="ads jumbotron">
     <div ng-repeat="ad in ads.ads" class="row">
-        <div class="col-md-5">
-            <h3>{{ ad.title }}</h3>
-            <div><strong>Date:</strong> {{ ad.date | date:'dd-MMM-yyyy' }}</div>
+        <div class="col-md-5 panel-group">
+            <h3 class="text-primary">{{ ad.title }}</h3>
+            <div class="text-left"><strong>Date:</strong> {{ ad.date | date:'dd-MMM-yyyy' }}</div>
             <div><strong>Text:</strong> {{ ad.text }}</div>
             <div><strong>Email:</strong> {{ ad.ownerEmail }}</div>
             <div><strong>Phone:</strong> {{ ad.ownerPhone }}</div>

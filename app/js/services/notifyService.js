@@ -4,7 +4,12 @@ app.factory('notifyService',
     function () {
         return {
             showInfo: function(msg) {
-                $.notify( msg, 'info');
+                noty({
+                        text: msg,
+                        type: 'info',
+                        layout: 'topCenter',
+                        timeout: 1000}
+                );
             },
             showError: function(msg, serverError) {
                 // Collect errors to display from the server response
@@ -27,9 +32,14 @@ app.factory('notifyService',
                 if (errors.length > 0) {
                     msg = msg + ":<br>" + errors.join("<br>");
                 }
-
-                $.notify(msg,'error');
+                noty({
+                        text: msg,
+                        type: 'error',
+                        layout: 'topCenter',
+                        timeout: 5000}
+                );
             }
         }
     }
 );
+
