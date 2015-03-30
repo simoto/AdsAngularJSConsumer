@@ -15,17 +15,23 @@ app.factory('adsService',
 );
 
 app.factory('townsService',
-    function ($resource, baseServiceUrl) {
+    function ($resource, baseServiceUrl){
+        var townsResource = $resource(baseServiceUrl + '/api/towns');
         return {
-            // TODO: implement a service to get towns
-        };
+            getTowns: function(success, error){
+                return townsResource.query(success, error);
+            }
+        }
     }
 );
 
 app.factory('categoriesService',
-    function ($resource, baseServiceUrl) {
+    function($resource, baseServiceUrl){
+        var categoriesResource = $resource(baseServiceUrl + '/api/categories');
         return {
-            // TODO: implement a service to get categories
-        };
+            getCategories: function(success, error){
+                return categoriesResource.query(success, error);
+            }
+        }
     }
 );
