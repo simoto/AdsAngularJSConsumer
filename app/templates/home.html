@@ -1,4 +1,10 @@
-<div class="ads jumbotron">
+<div class="text-center">
+    <pagination total-items="ads.numItems" ng-model="adsParams.startPage"
+                items-per-page="adsParams.pageSize" ng-change="reloadAds()"
+                max-size="9" boundary-links="true">
+    </pagination>
+</div>
+<div class="ads jumbotron" >
     <div ng-repeat="ad in ads.ads" class="row">
         <div class="col-md-5 panel-group">
             <h3 class="text-primary">{{ ad.title }}</h3>
