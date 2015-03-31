@@ -1,21 +1,43 @@
-<!--
-
-TODO: implement logic to show different navigation menu for:
-  - anonymous site visitors
-  - logged in users
-  - logged in administrators
-
--->
-
 <!-- Navigation box for anonymous site visitors -->
-<div class="panel panel-primary">
+<div ng-if="authService.isAnonymous()" class="panel panel-primary">
     <div class="panel-heading">
         <h3 class="panel-title">Navigation</h3>
     </div>
     <div class="list-group">
-         <a class="list-group-item" href="#/">Home</a>
-         <a class="list-group-item" href="#/login">Login</a>
-         <a class="list-group-item" href="#/register">Register</a>
+        <a class="list-group-item" href="#/">Home</a>
+        <a class="list-group-item" href="#/login">Login</a>
+        <a class="list-group-item" href="#/register">Register</a>
     </div>
 </div>
+
+<!-- Login / register box for anonymous site visitors -->
+<div class="panel panel-info" ng-if="authService.isAnonymous()">
+    <div class="panel-heading">
+        <div class="panel-title">To publish a new ad, please login.</div>
+    </div>
+    <div class="list-group">
+        <a class="list-group-item" href="#/login">Login</a>
+        <a class="list-group-item" href="#/register">Register</a>
+    </div>
+</div>
+
+<!-- Navigation box for logged in normal users (not admins) -->
+<div ng-if="authService.isNormalUser()" class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Navigation</h3>
+    </div>
+    <div class="list-group">
+        <a class="list-group-item" href="#/">Home</a>
+        <a class="list-group-item" href="#/user/ads">My Ads</a>
+        <!-- TODO: add “Publish New Ad” link -->
+        <!-- TODO: add “Edit Profile” link -->
+        <a class="list-group-item" ng-click="logout()">Logout</a>
+    </div>
+</div>
+
+<!-- Navigation box for logged in admins -->
+<div ng-if="authService.isAdmin()" class="panel panel-primary">
+    <!-- TODO: implement the “Admin” navigation sidebar -->
+</div>
+
 

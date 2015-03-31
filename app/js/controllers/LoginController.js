@@ -10,7 +10,8 @@ app.controller('LoginController',
                     $location.path('/');
                 },
                 function error(){
-                    notifyService.showError("Login failed!");
+                    notifyService.showError("Login failed:");
+                    notifyService.showError("The username or password is incorrect!");
                     $location.path('/login');
                 }
             );
