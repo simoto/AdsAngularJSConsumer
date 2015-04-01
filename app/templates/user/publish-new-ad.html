@@ -1,0 +1,48 @@
+<div class="col-md-8">
+    <form class="form-horizontal">
+        <fieldset>
+            <legend>Publish New Ad</legend>
+            <div class="form-group">
+                <label class="col-lg-2 control-label" for="title">Title:</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" id="title" ng-model="adData.title" required />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label" for="title">Text:</label>
+                <div class="col-lg-10">
+                    <textarea class="form-control" rows="3" id="title" ng-model="adData.title" required></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="image">Image:</label>
+                <span class="btn btn-block">
+                    <input class="form-control" type="file" id="image" onchange="angular.element(this).scope().fileSelected(this)" />
+                </span>
+
+                <div id="adImagePrewiew" class="img-thumbnail">
+                    <span class="img-thumbnail">Image Preview</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label" for="category">Category:</label>
+                <select class="form-control" id="category" ng-model="adData.categoryId">
+                    <option value="null">(None)</option>
+                    <option ng-repeat="c in categories" value="{{c.id}}">{{c.name}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label" for="town">Town:</label>
+                <select class="form-control" id="town" ng-model="adData.townId">
+                    <option value="null">(None)</option>
+                    <option ng-repeat="t in towns" value="{{t.id}}">{{t.name}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" ng-click="publishAd(adData)" class="button">Publish</a>
+                <button class="btn btn-primary" ng-click="redirectToUserAds()" class="button">Cancel</a>
+            </div>
+
+        </fieldset>
+    </form>
+</div>
