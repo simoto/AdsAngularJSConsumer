@@ -34,6 +34,21 @@
         <a class="list-group-item" href="#/" ng-click="logout()">Logout</a>
     </div>
 </div>
+<div ng-if="authService.isNormalUser()" ng-controller="UserController" class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Status</h3>
+    </div>
+    <div class="list-group">
+        <a class="list-group-item" ng-class="{'active' : selectedStatusId == null}"
+           ng-click="statusClicked(null)" href="#/user/ads">All</a>
+        <a class="list-group-item" ng-class="{'active' : selectedStatusId == 'Inactive'}"
+           ng-click="statusClicked('Inactive')" href="#/user/ads">Inactive</a>
+        <a class="list-group-item" ng-class="{'active' : selectedStatusId == 'WaitingApproval'}"
+           ng-click="statusClicked('WaitingApproval')" href="#/user/ads">WaitingApproval</a>
+        <a class="list-group-item" ng-class="{'active' : selectedStatusId == 'Published'}"
+           ng-click="statusClicked('Published')" href="#/user/ads">Published</a>
+    </div>
+</div>
 
 <!-- Navigation box for logged in admins -->
 <div ng-if="authService.isAdmin()" class="panel panel-primary">
