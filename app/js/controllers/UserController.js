@@ -31,6 +31,18 @@ app.controller('UserController',
             );
         };
 
+        $scope.publishAgainBtnClicked = function(id){
+            userService.publishAgainAd(id,
+                function success(data){
+                    notifyService.showInfo("Advertisement submitted for approval. Once approved, it will be published.");
+                    $scope.reloadUserAds();
+                },
+                function error(err){
+                    notifyService.showError("Ad republish failed", err);
+                }
+            );
+        };
+
         $scope.reloadUserAds();
 
         $scope.statusClicked = function(clickedStatusId) {
