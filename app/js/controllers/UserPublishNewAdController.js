@@ -25,7 +25,7 @@ app.controller('UserPublishNewAdController',
                 var reader = new FileReader();
                 reader.onload = function() {
                     $scope.adData.imageDataUrl = reader.result;
-                    $("#adImagePrewiew").html('<img style="max-width: 200px; max-width: 200px" src="' + reader.result + '">');
+                    $("#adImagePrewiew").html('<img style="max-width: 200px; max-width: 200px" src="' + $scope.adData.imageDataUrl + '">');
                 };
                 reader.readAsDataURL(file);
             } else {

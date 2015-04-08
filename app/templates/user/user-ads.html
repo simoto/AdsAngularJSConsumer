@@ -12,6 +12,11 @@
             <div><strong>Text:</strong> {{ ad.text }}</div>
             <div><strong>Email:</strong> {{ ad.ownerEmail }}</div>
             <div><strong>Phone:</strong> {{ ad.ownerPhone }}</div>
+            <div><strong>Status:</strong> {{ ad.status }}</div>
+            <div ng-if='ad.status != "Inactive"'>
+                <button ng-click="deactivateBtnClicked(ad.id)">Deactivate</button>
+            </div>
+
         </div>
         <div class="col-md-5">
             <div ng-if='ad.imageDataUrl' >

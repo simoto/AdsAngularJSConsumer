@@ -1,7 +1,7 @@
 'use strict';
 
 app.controller('UserController',
-    function($scope, $rootScope, pageSize, userService){
+    function($scope,$location, $rootScope, pageSize, userService, notifyService){
         $scope.adsParams = {
             'startPage': 1,
             'pageSize': pageSize
@@ -15,6 +15,18 @@ app.controller('UserController',
                 },
                 function error(err) {
                     notifyService.showError('Cannot load ads', err);
+                }
+            );
+        };
+
+        $scope.deactivateBtnClicked = function(id){
+            userService.deactivateAd(id,
+                function success(data){
+                    notifyService.showInfo("Ad is successful deactivated!");
+                    $scope.reloadUserAds();
+                },
+                function error(err){
+                    notifyService.showError("Ad is not successful deactivated!", err);
                 }
             );
         };
