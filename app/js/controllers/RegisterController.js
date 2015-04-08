@@ -12,7 +12,7 @@ app.controller('RegisterController',
             authService.register(userData,
                 function success(){
                     notifyService.showInfo("Registration successful!");
-                    $location.path('/');
+                    $location.path('/user/home');
                 },
                 function error(err){
                     notifyService.showError("Something wrong, registration is not successful!", err);
