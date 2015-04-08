@@ -16,7 +16,9 @@
             <div ng-if='ad.status != "Inactive"'>
                 <button ng-click="deactivateBtnClicked(ad.id)">Deactivate</button>
             </div>
-
+            <div ng-if='ad.status == "Inactive"'>
+                <button ng-click="publishAgainBtnClicked(ad.id)">Publish again</button>
+            </div>
         </div>
         <div class="col-md-5">
             <div ng-if='ad.imageDataUrl' >
