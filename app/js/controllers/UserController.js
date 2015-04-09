@@ -43,6 +43,10 @@ app.controller('UserController',
             );
         };
 
+        $scope.redirectToEditAd = function(id){
+            $location.path('/user/ads/edit/' + id);
+        };
+
         $scope.reloadUserAds();
 
         $scope.statusClicked = function(clickedStatusId) {

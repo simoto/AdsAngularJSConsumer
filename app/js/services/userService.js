@@ -39,6 +39,27 @@ app.factory('userService',
                     headers: authService.getAuthHeaders()
                 };
                 $http(request).success(success).error(error);
+            },
+
+            getAdById: function(id, success, error){
+                var request = {
+                    method: 'GET',
+                    url: baseServiceUrl + '/api/user/ads/' + id,
+                    headers: authService.getAuthHeaders()
+                };
+
+                $http(request).success(success).error(error);
+            },
+
+            editAd: function (params, success, error){
+                var request = {
+                    method: 'PUT',
+                    url: baseServiceUrl + '/api/user/ads/' + params.id,
+                    headers: authService.getAuthHeaders(),
+                    data: params
+                };
+
+                $http(request).success(success).error(error);
             }
         }
     }
