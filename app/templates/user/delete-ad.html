@@ -1,0 +1,19 @@
+<div class="jumbotron">
+    <div class="row">
+        <h2>Confirm Delete Ad?</h2>
+        <div class="col-md-4 pull-left">
+            <h3 class="text-primary">{{ ad.title }}</h3>
+            <div class="text-left"><strong>Date:</strong> {{ ad.date | date:'dd-MMM-yyyy' }}</div>
+            <div><strong>Text:</strong> {{ ad.text }}</div>
+            <div><strong>Category:</strong> {{ ad.categoryId }}</div>
+            <div><strong>Town:</strong> {{ ad.townId }}</div>
+        </div>
+        <div class="col-md-4 pull-right">
+            <div ng-if='ad.imageDataUrl'>
+                <img class="img-thumbnail" ng-src="{{ad.imageDataUrl}}"/>
+            </div>
+        </div>
+    </div>
+    <button ng-click="deleteCurrentAd(ad.id)">Delete</button>
+    <button ng-click="redirectToUserAds()">Cancel</button>
+</div>
