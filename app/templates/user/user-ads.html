@@ -1,35 +1,37 @@
-<div class="text-center">
-    <pagination total-items="userAds.numItems" ng-model="adsParams.startPage"
-                items-per-page="adsParams.pageSize" ng-change="reloadUserAds()"
-                max-size="9" boundary-links="true">
-    </pagination>
-</div>
-<div class="ads jumbotron" >
-    <div ng-repeat="ad in userAds.ads" class="row">
-        <div class="col-md-5 panel-group">
-            <h3 class="text-primary">{{ ad.title }}</h3>
-            <div class="text-left"><strong>Date:</strong> {{ ad.date | date:'dd-MMM-yyyy' }}</div>
-            <div><strong>Text:</strong> {{ ad.text }}</div>
-            <div><strong>Email:</strong> {{ ad.ownerEmail }}</div>
-            <div><strong>Phone:</strong> {{ ad.ownerPhone }}</div>
-            <div><strong>Status:</strong> {{ ad.status }}</div>
-            <div ng-if='ad.status != "Inactive"'>
-                <button ng-click="deactivateBtnClicked(ad.id)">Deactivate</button>
-            </div>
-            <div ng-if='ad.status == "Inactive"'>
-                <button ng-click="publishAgainBtnClicked(ad.id)">Publish again</button>
-                <button ng-click="redirectToEditAd(ad.id)">Edit</button>
-            </div>
-        </div>
-        <div class="col-md-5">
-            <div ng-if='ad.imageDataUrl' >
-                <img class="img-thumbnail" ng-src="{{ad.imageDataUrl}}" />
-            </div>
-        </div>
-        <br/>
+<div ng-controller="UserController">
+    <div class="text-center">
+        <pagination total-items="userAds.numItems" ng-model="adsParams.startPage"
+                    items-per-page="adsParams.pageSize" ng-change="reloadUserAds()"
+                    max-size="9" boundary-links="true">
+        </pagination>
     </div>
-    <div ng-if="userAds.ads.length==0" class="panel-danger">
-        <h1>No ads found.</h1>
+    <div class="ads jumbotron">
+        <div ng-repeat="ad in userAds.ads" class="row">
+            <div class="col-md-5 panel-group">
+                <h3 class="text-primary">{{ ad.title }}</h3>
+                <div class="text-left"><strong>Date:</strong> {{ ad.date | date:'dd-MMM-yyyy' }}</div>
+                <div><strong>Text:</strong> {{ ad.text }}</div>
+                <div><strong>Email:</strong> {{ ad.ownerEmail }}</div>
+                <div><strong>Phone:</strong> {{ ad.ownerPhone }}</div>
+                <div><strong>Status:</strong> {{ ad.status }}</div>
+                <div ng-if='ad.status != "Inactive"'>
+                    <button ng-click="deactivateBtnClicked(ad.id)">Deactivate</button>
+                </div>
+                <div ng-if='ad.status == "Inactive"'>
+                    <button ng-click="publishAgainBtnClicked(ad.id)">Publish again</button>
+                    <button ng-click="redirectToEditAd(ad.id)">Edit</button>
+                    <button ng-click="redirectToDeleteAd(ad.id)">Delete</button>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div ng-if='ad.imageDataUrl'>
+                    <img class="img-thumbnail" ng-src="{{ad.imageDataUrl}}"/>
+                </div>
+            </div>
+            <br/>
+        </div>
+        <div ng-if="userAds.ads.length==0" class="panel-danger">
+            <h1>No ads found.</h1>
+        </div>
     </div>
 </div>
-

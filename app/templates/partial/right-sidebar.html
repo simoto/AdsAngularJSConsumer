@@ -1,32 +1,27 @@
-<div ng-controller="RightSidebarController">
-    <div class="panel panel-primary">
-        <div class="panel-heading">
-            <h3 class="panel-title"  in categories">Categories</h3>
-        </div>
-        <div class="list-group">
-            <a class="list-group-item" ng-class="{'active' : selectedCategoryId == null}"
-                ng-click="categoryClicked(null)" href="#/">All</a>
-            <a ng-repeat="category in categories"
-               ng-click="categoryClicked(category.id)"
-               ng-class="{'active' : selectedCategoryId == category.id }"
-               class="list-group-item" href="#/">{{ category.name }}</a>
-        </div>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title" in categories">Categories</h3>
     </div>
-
-    <div class="panel panel-primary">
-        <div class="panel-heading">
-            <h3 class="panel-title">Towns</h3>
-
-        </div>
-        <div class="list-group">
-            <a class="list-group-item" ng-class="{'active' : selectedTownId == null}"
-               ng-click="townClicked(null)" href="#/">All</a>
-            <a ng-repeat="town in towns"
-               ng-click="townClicked(town.id)"
-               ng-class="{ 'active' : selectedTownId == town.id }"
-               class="list-group-item" href="#/">{{ town.name }}</a>
-            </div>
-        </div>
+    <div class="list-group">
+        <a class="list-group-item" ng-class="{'active' : selectedCategoryId == null}"
+           ng-click="categoryClicked(null)" href="#/">All</a>
+        <a ng-repeat="category in categories"
+           ng-click="categoryClicked(category.id)"
+           ng-class="{'active' : selectedCategoryId == category.id }"
+           class="list-group-item" href="#/">{{ category.name }}</a>
     </div>
 </div>
-
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Towns</h3>
+    </div>
+    <div class="list-group">
+        <a class="list-group-item" ng-class="{'active' : selectedTownId == null}"
+           ng-click="townClicked(null)" href="#/">All</a>
+        <a ng-repeat="town in towns"
+           ng-click="townClicked(town.id)"
+           ng-class="{ 'active' : selectedTownId == town.id }"
+           class="list-group-item" href="#/">{{ town.name }}</a>
+    </div>
+</div>
+</div>

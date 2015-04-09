@@ -4,8 +4,9 @@
             <legend>Edit Ad</legend>
             <div class="form-group">
                 <label class="col-lg-2 control-label" for="title">Title:</label>
+
                 <div class="col-lg-10">
-                    <input type="text" class="form-control" id="title" ng-model="adData.title" required />
+                    <input type="text" class="form-control" id="title" ng-model="adData.title" required/>
                 </div>
             </div>
             <div class="form-group">
@@ -17,33 +18,34 @@
             <div class="form-group">
                 <label for="image">Image:</label>
                 <span class="btn btn-block">
-                    <input class="form-control" type="file" id="image" onchange="angular.element(this).scope().fileSelected(this)" />
+                    <input class="form-control" type="file" id="image"
+                           onchange="angular.element(this).scope().fileSelected(this)"/>
                 </span>
                 <button ng-click="deleteImage()">Delete Image</button>
                 <div id="adImagePrewiew" class="img-thumbnail">
-                    <img style="max-width: 200px; max-width: 200px" src="{{adData.imageDataUrl}}" />
+                    <img style="max-width: 200px; max-width: 200px" src="{{adData.imageDataUrl}}"/>
                 </div>
             </div>
-            </div>
-            <div class="form-group">
-                <label class="col-lg-2 control-label" for="category">Category:</label>
-                <select class="form-control" id="category" ng-model="adData.categoryId">
-                    <option value="null">(None)</option>
-                    <option ng-repeat="c in categories" value="{{c.id}}">{{c.name}}</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label class="col-lg-2 control-label" for="town">Town:</label>
-                <select class="form-control" id="town" ng-model="adData.townId">
-                    <option value="null">(None)</option>
-                    <option ng-repeat="t in towns" value="{{t.id}}">{{t.name}}</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <button class="btn btn-primary" ng-click="submitEditAd(adData)" class="button">Publish</a>
-                    <button class="btn btn-primary" ng-click="redirectToUserAds()" class="button">Cancel</a>
-            </div>
+        </div>
+    <div class="form-group">
+    <label class="col-lg-2 control-label" for="category">Category:</label>
+    <select class="form-control" id="category" ng-model="adData.categoryId">
+        <option value="null">(None)</option>
+        <option ng-repeat="c in categories" value="{{c.id}}">{{c.name}}</option>
+    </select>
+</div>
+<div class="form-group">
+    <label class="col-lg-2 control-label" for="town">Town:</label>
+    <select class="form-control" id="town" ng-model="adData.townId">
+        <option value="null">(None)</option>
+        <option ng-repeat="t in towns" value="{{t.id}}">{{t.name}}</option>
+    </select>
+</div>
+<div class="form-group">
+    <button class="btn btn-primary" ng-click="submitEditAd(adData)" class="button">Publish</a>
+        <button class="btn btn-primary" ng-click="redirectToUserAds()" class="button">Cancel</a>
+</div>
 
-        </fieldset>
-    </form>
+</fieldset>
+</form>
 </div>

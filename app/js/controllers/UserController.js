@@ -47,6 +47,10 @@ app.controller('UserController',
             $location.path('/user/ads/edit/' + id);
         };
 
+        $scope.redirectToDeleteAd = function(id){
+            $location.path('/user/ads/delete/' + id);
+        };
+
         $scope.reloadUserAds();
 
         $scope.statusClicked = function(clickedStatusId) {
