@@ -70,6 +70,7 @@ strong {
 
 body {
     background-image: url('green-pattern-wallpapers-backgrounds-for-powerpoint.jpg');
+    padding-bottom:80px;
 }
 
 header {
@@ -81,6 +82,9 @@ header {
 footer {
     color: white;
     background-color: black;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 .btn-primary {
@@ -99,4 +103,12 @@ footer {
     background-color: #f5f5f5;
     color: #808080;
     width:  100%;
+}
+
+.well {
+    border-radius: 0px;
+}
+
+.form-horizontal {
+    padding: 30px;
 }
