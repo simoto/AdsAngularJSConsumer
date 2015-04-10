@@ -32,6 +32,11 @@ app.config(function ($routeProvider) {
         controller: 'UserController'
     });
 
+    $routeProvider.when('/user/profile', {
+        templateUrl: 'templates/user/user-profile.html',
+        controller: 'UserProfileController'
+    });
+
     $routeProvider.when('/user/ads/edit/:id', {
         templateUrl: 'templates/user/edit-ad.html',
         controller: 'UserEditAdController'

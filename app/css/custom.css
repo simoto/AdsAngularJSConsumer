@@ -3,17 +3,23 @@
     background-color: forestgreen;
 }
 
-div.panel-heading {
-    border-radius: 0px;
-}
-
 .panel-primary {
     border-color: white;
 }
 
-.container .jumbotron, .container-fluid .jumbotron {
-    border-radius: 0px;
+.panel-primary>.panel-heading {
+    color: #fff;
+    background-color: green;
+    border-color: green;
 }
+
+.panel .dropdown ul.dropdown-menu {
+    height: 300px;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-x: hidden;
+}
+
 .pagination>li:first-child>a, .pagination>li:first-child>span {
     margin-left: 0;
     border-top-left-radius: 0px;
@@ -32,6 +38,15 @@ div.panel-heading {
     border-radius: 0px;
 }
 
+div.panel-heading {
+    border-radius: 0px;
+}
+
+.container .jumbotron, .container-fluid .jumbotron {
+    border-radius: 0px;
+}
+
+
 .list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
     background-color: limegreen;
     border-color: white;
@@ -44,11 +59,7 @@ a.list-group-item:focus, a.list-group-item:hover {
     border-radius: 0px;
 }
 
-.panel-primary>.panel-heading {
-    color: #fff;
-    background-color: green;
-    border-color: green;
-}
+
 .jumbotron .row {
     padding-bottom: 20px;
     margin-bottom: 30px;
