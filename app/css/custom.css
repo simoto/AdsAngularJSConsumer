@@ -1,0 +1,82 @@
+.panel {
+    border-radius: 0px;
+    background-color: forestgreen;
+}
+
+div.panel-heading {
+    border-radius: 0px;
+}
+
+.panel-primary {
+    border-color: white;
+}
+
+.container .jumbotron, .container-fluid .jumbotron {
+    border-radius: 0px;
+}
+.pagination>li:first-child>a, .pagination>li:first-child>span {
+    margin-left: 0;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.pagination>li:last-child>a, .pagination>li:last-child>span {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+
+    background-color: limegreen;
+    border-color: white;
+    border-radius: 0px;
+}
+
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
+    background-color: limegreen;
+    border-color: white;
+}
+
+a.list-group-item:focus, a.list-group-item:hover {
+    color: black;
+    background-color: palegreen;
+}
+
+.panel-primary>.panel-heading {
+    color: #fff;
+    background-color: green;
+    border-color: green;
+}
+.jumbotron .row {
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid green;
+}
+
+.jumbotron h3 {
+    margin-left: 0px;
+    margin-top: 0px;
+    padding: 5px;
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+    background-color: forestgreen;
+    color: white;
+}
+
+strong {
+    font-family: verdana, sans-serif;
+}
+
+body {
+    background-image: url('green-pattern-wallpapers-backgrounds-for-powerpoint.jpg');
+}
+
+header {
+    background-color: green;
+    color:#f5f5f5;
+    margin: 20px;
+}
+
+footer {
+    color: white;
+    background-color: black;
+}

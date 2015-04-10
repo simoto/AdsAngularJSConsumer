@@ -1,24 +1,23 @@
 <div class="text-center">
     <pagination total-items="ads.numItems" ng-model="adsParams.startPage"
                 items-per-page="adsParams.pageSize" ng-change="reloadAds()"
-                max-size="9" boundary-links="true">
+                max-size="7" boundary-links="true">
     </pagination>
 </div>
-<div class="ads jumbotron">
+<div class="jumbotron">
     <div ng-repeat="ad in ads.ads" class="row">
-        <div class="col-md-5 panel-group">
-            <h3 class="text-primary">{{ ad.title }}</h3>
-            <div class="text-left"><strong>Date:</strong> {{ ad.date | date:'dd-MMM-yyyy' }}</div>
-            <div><strong>Text:</strong> {{ ad.text }}</div>
-            <div><strong>Email:</strong> {{ ad.ownerEmail }}</div>
-            <div><strong>Phone:</strong> {{ ad.ownerPhone }}</div>
+        <div class="col-md-6 pull-left">
+                <h3>{{ ad.title }}</h3>
+                <div class="text-left"><strong>Date:</strong> {{ ad.date | date:'dd-MMM-yyyy' }}</div>
+                <div><strong>Text:</strong> {{ ad.text }}</div>
+                <div><strong>Email:</strong> {{ ad.ownerEmail }}</div>
+                <div><strong>Phone:</strong> {{ ad.ownerPhone }}</div>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-6 pull-right">
             <div ng-if='ad.imageDataUrl'>
                 <img class="img-thumbnail" ng-src="{{ad.imageDataUrl}}"/>
             </div>
         </div>
-        <br/>
     </div>
 </div>
 <div ng-if="ads.ads.length==0" class="panel-danger">
