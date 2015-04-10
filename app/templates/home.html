@@ -17,6 +17,9 @@
             <div ng-if='ad.imageDataUrl'>
                 <img class="img-thumbnail" ng-src="{{ad.imageDataUrl}}"/>
             </div>
+            <div ng-if='!ad.imageDataUrl'>
+                <img class="img-thumbnail" ng-src="css/image-not-found.jpg"/>
+            </div>
         </div>
     </div>
 </div>
