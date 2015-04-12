@@ -1,0 +1,27 @@
+<div ng-repeat="ad in userAds.ads" class="row">
+    <div class="col-md-6 pull-left">
+        <h3>{{ ad.title }}</h3>
+        <div class="text-left"><strong>Date:</strong> {{ ad.date | date:'dd-MMM-yyyy' }}</div>
+        <div><strong>Text:</strong> {{ ad.text }}</div>
+        <div><strong>Email:</strong> {{ ad.ownerEmail }}</div>
+        <div><strong>Phone:</strong> {{ ad.ownerPhone }}</div>
+        <div><strong>Status:</strong> {{ ad.status }}</div>
+        <div ng-if='ad.status != "Inactive"'>
+            <button class="btn-primary" ng-click="deactivateBtnClicked(ad.id)">Deactivate</button>
+        </div>
+        <div ng-if='ad.status == "Inactive"'>
+            <button class="btn-primary" ng-click="publishAgainBtnClicked(ad.id)">Publish again</button>
+            <button class="btn-primary" ng-click="redirectToEditAd(ad.id)">Edit</button>
+            <button class="btn-primary" ng-click="redirectToDeleteAd(ad.id)">Delete</button>
+        </div>
+    </div>
+    <div class="col-md-6 pull-right">
+        <div ng-if='ad.imageDataUrl'>
+            <img class="img-thumbnail" ng-src="{{ad.imageDataUrl}}"/>
+        </div>
+    </div>
+    <br/>
+</div>
+<div ng-if="userAds.ads.length==0" class="well">
+    <h2>No ads found.</h2>
+</div>
