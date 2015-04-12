@@ -13,14 +13,27 @@ app.controller('UserProfileController',
 
         $scope.towns = townsService.getTowns();
         $scope.updateUserInformation = function(data){
-              userService.updateUserProfile(data,
-                    function success(succ) {
-                         notifyService.showInfo("Profile was successful updated!")
-                    },
-                    function error(err){
-                         notifyService.showError("Update profile failed!", err);
-                    }
-              );
+             userService.updateUserProfile(data,
+                  function success(succ) {
+                      notifyService.showInfo("Profile was successful updated!")
+                      $scope.redirectToUserAds();
+                  },
+                  function error(err){
+                      notifyService.showError("Update profile failed!", err);
+                  }
+             );
+        };
+
+        $scope.changeUserPassword = function(data){
+            userService.updateUserPass(data,
+                function success(succ){
+                    notifyService.showInfo("Password was successful updated!")
+                    $scope.redirectToUserAds();
+                },
+                function error(err) {
+                    notifyService.showError("Update password failed!", err);
+                }
+            );
         };
 
         $scope.redirectToUserAds = function(){

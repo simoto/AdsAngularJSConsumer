@@ -37,6 +37,11 @@ app.config(function ($routeProvider) {
         controller: 'UserProfileController'
     });
 
+    $routeProvider.when('/user/changepassword', {
+        templateUrl: 'templates/user/change-password.html',
+        controller: 'UserProfileController'
+    });
+
     $routeProvider.when('/user/ads/edit/:id', {
         templateUrl: 'templates/user/edit-ad.html',
         controller: 'UserEditAdController'

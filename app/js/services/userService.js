@@ -23,6 +23,17 @@ app.factory('userService',
                 $http(request).success(success).error(error);
             },
 
+            updateUserPass: function(data, success, error){
+                var request = {
+                    method: 'PUT',
+                    url: baseServiceUrl + '/api/user/changePassword',
+                    headers: authService.getAuthHeaders(),
+                    data: data
+                };
+
+                $http(request).success(success).error(error);
+            },
+
             createNewAd: function (adData, success, error) {
                 var request = {
                     method: 'POST',
