@@ -1,14 +1,16 @@
 'use strict';
 
+//NotifyService is responsible to show notifications to the users
 app.factory('notifyService',
     function () {
         return {
             showInfo: function(msg) {
                 noty({
-                        text: msg,
-                        type: 'info',
-                        layout: 'topCenter',
-                        timeout: 1000}
+                    text: msg,
+                    type: 'info',
+                    layout: 'topCenter',
+                    timeout: 1000
+                    }
                 );
             },
             showError: function(msg, serverError) {
@@ -33,13 +35,13 @@ app.factory('notifyService',
                     msg = msg + ":<br>" + errors.join("<br>");
                 }
                 noty({
-                        text: msg,
-                        type: 'error',
-                        layout: 'topCenter',
-                        timeout: 5000}
+                    text: msg,
+                    type: 'error',
+                    layout: 'topCenter',
+                    timeout: 5000
+                    }
                 );
             }
         }
     }
 );
-

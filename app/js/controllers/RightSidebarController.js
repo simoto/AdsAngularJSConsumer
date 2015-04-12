@@ -14,6 +14,5 @@ app.controller('RightSidebarController',
             $scope.selectedTownId = clickedTownId;
             $rootScope.$broadcast("townSelectionChanged", clickedTownId);
         };
-
     }
 );

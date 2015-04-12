@@ -57,6 +57,11 @@ app.config(function ($routeProvider) {
         controller: 'UserPublishNewAdController'
     });
 
+    $routeProvider.when('/admin/home', {
+        templateUrl: 'templates/home.html',
+        controller: 'HomeController'
+    });
+
     $routeProvider.otherwise(
         { redirectTo: '/' }
     );

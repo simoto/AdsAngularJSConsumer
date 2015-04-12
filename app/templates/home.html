@@ -12,13 +12,17 @@
                 <div><strong>Text:</strong> {{ ad.text }}</div>
                 <div><strong>Email:</strong> {{ ad.ownerEmail }}</div>
                 <div><strong>Phone:</strong> {{ ad.ownerPhone }}</div>
+                <div ng-if="authService.isAdmin()">
+                    <div><strong>Category:</strong> {{ ad.categoryId }}</div>
+                    <div><strong>Town:</strong>{{ ad.townId }}</div>
+                </div>
         </div>
         <div class="col-md-6 pull-right">
             <div ng-if='ad.imageDataUrl'>
                 <img class="img-thumbnail" ng-src="{{ad.imageDataUrl}}"/>
             </div>
             <div ng-if='!ad.imageDataUrl'>
-                <img class="img-thumbnail" ng-src="css/image-not-found.jpg"/>
+                <img class="img-thumbnail" ng-src="images/image-not-found.jpg"/>
             </div>
         </div>
     </div>

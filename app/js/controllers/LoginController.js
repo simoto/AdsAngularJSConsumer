@@ -9,16 +9,15 @@ app.controller('LoginController',
                     notifyService.showInfo("Login successful!");
                     $location.path('/user/home');
                 },
-                function error(){
-                    notifyService.showError("Login failed:");
-                    notifyService.showError("The username or password is incorrect!");
+                function error(err){
+                    notifyService.showError("Login failed:", err);
                     $location.path('/login');
                 }
             );
-        }
+        };
 
         $scope.redirectToRegister = function (){
             $location.path('/register');
-        }
+        };
     }
 );
